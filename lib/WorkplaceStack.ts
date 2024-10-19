@@ -21,7 +21,10 @@ export class WorkplaceStack extends cdk.Stack {
     const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
       domainName: props.domainName,
     });
-
+    /**
+     * The idea is that you could swap this construct out for the SESMailService
+     * or another you may write to swap the service provider for work mail.
+     */
     new GoogleMailService(this, "GoogleMailService", {
       hostedZone,
       domainName: props.domainName,
@@ -29,5 +32,10 @@ export class WorkplaceStack extends cdk.Stack {
       region: this.region,
       verificationToken: props.verificationToken,
     });
+
+    /**
+     * You might do other things like setup helpful work microservices
+     * or even Slack bots and deploy internal admin dashboards or tools.
+     */
   }
 }
