@@ -6,7 +6,7 @@ import * as route53 from "aws-cdk-lib/aws-route53";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import { MailService, MailServiceProps } from "./MailService";
-import { Mail } from "../utils/Mail";
+import { Mail } from "../../utils/Mail";
 
 // ! I don't use this construct anymore, but another example of extending a base construct (MailService)
 

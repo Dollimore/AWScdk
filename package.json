@@ -1,0 +1,42 @@
+{
+    "name": "cdk",
+    "version": "0.0.1",
+    "main": "index.ts",
+    "license": "MIT",
+    "bin": {
+      "cdk": "bin/cdk.ts"
+    },
+    "scripts": {
+      "bootstrap": "cdk bootstrap",
+      "deploy": "cdk deploy",
+      "deploy:work": "cdk deploy WorkplaceStack",
+      "deploy:play": "cdk deploy SPAStack",
+      "__test__": "",
+      "test": "yarn run test:watch",
+      "test:coverage": "vitest run --coverage",
+      "test:watch": "vitest",
+      "__clean__": "__clean__",
+      "clean": "yarn clean:node",
+      "clean:node": "yarn cache clean && rm -rf node_modules && yarn install"
+    },
+    "devDependencies": {
+      "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+      "@types/node": "^20.14.12",
+      "aws-cdk": "^2.160.0",
+      "aws-sdk": "^2.1664.0",
+      "dotenv": "^16.4.5",
+      "esbuild": "^0.23.1",
+      "prettier": "^3.3.3",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.5.4",
+      "vite": "^5.3.5",
+      "vitest": "^2.0.4"
+    },
+    "dependencies": {
+      "aws-cdk-lib": "^2.150.0",
+      "axios": "^1.7.7",
+      "constructs": "^10.3.0",
+      "source-map-support": "^0.5.21"
+    }
+  }
+  

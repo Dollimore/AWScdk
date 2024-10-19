@@ -5,7 +5,7 @@ import * as targets from "aws-cdk-lib/aws-route53-targets";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as cert from "aws-cdk-lib/aws-certificatemanager";
-import { WebsiteBucket } from "../constructs/WebsiteBucket";
+import { WebsiteBucket } from "../src/constructs/SPA/SPABucketConstruct";
 import { Domain } from "../src/utils/Domain";
 import createResourceId from "../src/utils/ID";
 

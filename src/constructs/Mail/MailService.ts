@@ -3,7 +3,7 @@ import { CfnOutput } from "aws-cdk-lib";
 import * as ses from "aws-cdk-lib/aws-ses";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import * as iam from "aws-cdk-lib/aws-iam";
-import { Mail } from "../utils/Mail";
+import { Mail } from "../../utils/Mail";
 
 export interface MailServiceProps {
   hostedZone: route53.IHostedZone;

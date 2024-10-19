@@ -7,6 +7,7 @@ dotenv.config();
 import * as cdk from "aws-cdk-lib";
 import { Domain } from "../src/utils/Domain";
 import { WorkplaceStack } from "../lib/WorkplaceStack";
+import { EnvironmentConfig } from "../src/utils/EnvironmentConfig";
 import { SPAStack } from "../lib/SPAStack";
 
 const app = new cdk.App();
@@ -26,7 +27,8 @@ new WorkplaceStack(app, "WorkplaceStack", {
 // overkill. Once the infra is up, code deploy can be run faster alone and just assume the infra is there.
 new SPAStack(app, "MainStack", {
   name: "Main",
-  description: "This could be the primary website example, not using a subdomain",
+  description:
+    "This could be the primary website example, not using a subdomain",
   rootDomain: Domain.rootDomain,
   domainName: Domain.rootDomain,
   certificateArn: process.env.GLOBAL_CERTIFICATE_ARN,
